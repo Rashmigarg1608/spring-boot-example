@@ -3,7 +3,7 @@ pipeline{
         label "linux"
     }
     tools { 
-        maven 'maven' 
+        maven 'maven3.8.4' 
         jdk 'jdk 11'
     }
     stages{
