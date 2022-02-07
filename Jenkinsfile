@@ -45,8 +45,8 @@ pipeline
         }
          success{
             sh 'echo "--------------------------Deploying------------------------------"'
-            sshPublisher(publishers: [sshPublisherDesc(configName: 'production', transfers: [sshTransfer(cleanRemote: true, excludes: '', execCommand: '''cd product/target
-java -jar .jar &''', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: 'product', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '/.jar')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: true)])
+            //sshPublisher(publishers: [sshPublisherDesc(configName: 'production', transfers: [sshTransfer(cleanRemote: true, excludes: '', execCommand: '''cd product/target
+//java -jar .jar &''', execTimeout: 120000, flatten: false, makeEmptyDirs: false, noDefaultExcludes: false, patternSeparator: '[, ]+', remoteDirectory: 'product', remoteDirectorySDF: false, removePrefix: '', sourceFiles: '/.jar')], usePromotionTimestamp: false, useWorkspaceInPromotion: false, verbose: true)])
         }
     }
 }
