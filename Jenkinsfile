@@ -35,6 +35,16 @@ pipeline
                 sh 'mvn  clean package'
             }
         }
+	    
+	    stage("Deploy")
+            {
+                steps{
+                    sshagent(['abcd']) {
+                    sh "scp -o StrictHostKeyChecking=no  /var/lib/jenkins/workspace/Capstone_project_Production/target/*.jar ubuntu@113.57.251.172:/home/ubuntu/"
+                               
+                 }
+                }
+            }
     }
     post
     {
