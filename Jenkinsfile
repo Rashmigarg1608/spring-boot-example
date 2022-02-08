@@ -36,15 +36,15 @@ pipeline
             }
         }
 	    
-	    //stage("Deploy")
-           // {
-             //   steps{
-               //     sshagent(['abcde']) {
-               //     sh "scp -o StrictHostKeyChecking=no  /varlib/jenkins/workspace/Capstone_project_Production/target/*.jar ubuntu@18.144.169.30:/home/ubuntu/"
+	    stage("Deploy")
+            {
+                steps{
+                  sshagent(['abcde']) {
+                   sh "scp -o StrictHostKeyChecking=no  /.jenkins/workspace/Capstone_project_Production/target/*.jar ubuntu@18.144.169.30:/home/ubuntu/"
                                
-                // }
-                //}
-            //} 
+                }
+                }
+            } 
     }
     post
     {
